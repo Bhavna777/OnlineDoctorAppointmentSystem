@@ -27,3 +27,4 @@ Admin Dashboard
 
 There are multiple page exist like :- Home, Doctor, Product, Blog, SignUp, SignIn, Admin Dashboard, Patient Dashboard (working), Doctor Dashboard, and many more. Admin can perform CRUD operation on Doctor and Patient both. Patient can book approintment after that admin will varify it.
 
+Here is the live preview https://medolx.herokuapp.com/
