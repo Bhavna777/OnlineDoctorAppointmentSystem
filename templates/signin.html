@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+{% block body %}
+<div class="signup" id="wrap">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 mt-5 mb-5 container">
+            <form method="post" accept-charset="utf-8" class="form" role="form">
+                {% csrf_token %}
+                <legend class="mb-3 text-center">Sign In</legend>
+                <input type="text" name="username" value="" class="form-control input-lg" placeholder="Username" />
+                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password" />
+
+                <br />
+                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                    Sign In</button>
+                <p class="mt-5">Don't have an account ? <a href="/signup"><span>Sign Up</span></a></p>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+    function checkvalid(){
+    var numbers = /[0-9]/g;
+    var passw=  /[A-Za-z]\w[0-9]/;
+
+    if(username.value == ""){
+        alert("Username not should be blank")
+        return false
+    }
+
+    else if(username.value.length<7){
+        alert("Username must be upper than 7")
+        return false
+    }
+
+    else if(!username.value.match(numbers)){
+        alert("Username Must include numbers")
+        return false
+    }
+
+    else if(password.value == ""){
+        alert("Password not should be blank")
+        return false
+    }
+    
+    else if(password.value.length<7){
+        alert("Password must be upper than 7")
+        return false
+    }
+
+    else if(!password.value.match(passw)){
+        alert("Password must include numbers and at least one capital letter")
+        return false
+        
+    }else{
+        return true
+    }
+}
+</script>
+
+{% endblock %}

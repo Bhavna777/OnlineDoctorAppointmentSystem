@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Winsome Naturals{% endblock %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .winsome_hero{
+        background-image: url("/static/images/winsome_hero.jpeg");
+        height: 505px; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+    }
+    .winsome_hero img{
+        height: 150px;
+        width: 150px;
+        background-color: black;
+    }
+    .winsome_hero h1{
+        margin-top: 64px;
+        width: 415px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 75px;
+        color: #FFF38A;
+    }
+    .winsome_hero p{
+        margin-top: 34px;
+        width: 736px;
+        text-align: left;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 35px;
+        color: #FFFFFF;
+    }
+    .winsome_product .small img{
+        height: 77px;
+        width: 77px;
+        margin-top: 61px;
+        margin-left: 12px;
+    }
+    .winsome_product .about{
+        margin-top: 32px;
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 45px;
+        color: #5F0000;
+        text-align: left;
+    }
+    .winsome_product .benefit{
+        text-align: left;
+        margin-top: 14px;
+        margin-left: 50px;
+        width: 537px;
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 30px;
+        color: #000000;
+    }
+    .winsome_product button{
+        width: 274px;
+        height: 78px;
+        background: #FFF38A;
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 35px;
+        color: #000000;
+        margin-left: 50px;
+    }
+    .winsome_product button span img{
+        width: 67px;
+        height: 67px;
+    }
+    .winsome_product .mrp{
+        width: 242px;
+        font-family: Alice;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        /* line-height: 55px; */
+        color: #5F0000;
+        margin-left: 50px;
+    }
+    .winsome_product .all_taxes{
+        margin-left: 50px;
+    }
+</style>
+
+<body>
+    <div class="winsome_hero">
+        <div class="winsome_logo">
+            <img src="{% static "images/winsome_logo.png" %}" alt="">
+        </div>
+        <h1>VITAMIN C</h1>
+        <p>Vitamin C Serum Vitamin C Rejuvenating Face Serum Skin Clearing, Brightening,Dark Circle Anti-Aging Skin Repair,Fine Line & Sun Damage Corrector, Supercharged Face Serum.</p>
+    </div>
+    <div class="winsome_product">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="{% static "images/winsome_product.jpeg" %}" alt="">
+                <div class="row small">
+                    <div class="col-md-2.5">
+                        <img src="{% static "images/winsome_product.jpeg" %}" alt="">
+                    </div>
+                    <div class="col-md-2.5">
+                        <img src="{% static "images/winsome_product.jpeg" %}" alt="">
+                    </div>
+                    <div class="col-md-2.5">
+                        <img src="{% static "images/winsome_product.jpeg" %}" alt="">
+                    </div>
+                    <div class="col-md-2.5">
+                        <img src="{% static "images/winsome_product.jpeg" %}" alt="">
+                    </div>
+                    <div class="col-md-2.5">
+                        <img src="{% static "images/winsome_product.jpeg" %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 text-left">
+                <p class="about">Vitamin C Serum Vitamin C Rejuvenating Face Serum Skin Clearing, Brightening,Dark Circle Anti-Aging Skin Repair,Fine Line & Sun Damage Corrector, Supercharged Face Serum.Genuine 90% - 50 ml</p>
+                <p class="benefit">
+                    Reduces appearance of signs of ageing <br>
+                    Fragrance Free <br>
+                    Increases collagen production <br>
+                    Silicone Free <br>
+                    Brightens skin complexion <br>
+                    pH: 3.9 - 4.9 <br>
+                    Provides intense hydration <br>
+                    Reduces Dark Spots <br>
+                    Protects skin from sun damage <br>
+                    Brightens Complexion <br>
+                    Paraben Free
+                </p>
+                <a href="#"><button class="btn"><span><img src="{% static "images/cart_btn.svg" %}" alt="Not FOund"></span> Shopping Cart</button></a>
+                <p class="mrp">MRP: ₹849 </p><br>
+                <!-- <span class="all_taxes"> Inclusive of all taxes</span> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

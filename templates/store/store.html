@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Store{% endblock %}
+{% block body %}
+{% load static %}
+{% load mathfilters %}
+	
+<section class="products">
+    <h1 class="text-center">Products</h1>
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-lg-3 text-center product_row">
+                <div style="border-radius: 50%; height: 100px; width: 100px; position: absolute; top: -40px; left: -10px;" class="bg-danger text-light"><h5 style="margin-top: 40px;">{{product.discount}}% Off</h5></div>
+				<img class="thumbnail" src="{% static product.profile_pic.url %}">
+                <div class="box-element product bg-light">
+					<h6 class="text-dark"><strong>{{product.name}}</strong></h6>
+					<hr>
+					
+					<h4 style="display: inline-block; text-decoration: line-through;" class="text-danger"><strong>{{product.price}}</strong></h4>
+					{% with answer=product.discount|mul:product.price|div:100 %}
+					<h4 style="display: inline-block;" class="ml-5 text-dark"><strong>{{product.price|sub:answer}} INR</strong></h4><hr>
+					{% endwith %}
+					<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-danger add-btn update-cart">Add to Cart</button>
+					
+					<a class="btn btn-outline-danger" href="#">View</a><br><br>
+		
+				</div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+<!--
+
+-->
+<div class="container">
+    <!-- <a href="/admin_add_appointments"><button class="mb-5 text-center btn btn-primary text-light">Add Appointments</button></a> -->
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 class="panel-title">Appointments</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+      <thead>
+        <tr>
+
+          <th>Patient Name</th>
+          <th>Doctor Name</th>
+          <th>Phone No</th>
+          <th>Gender</th>
+          <th>More Info</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      {% for a in appointments %}
+        
+          <tr>
+            <td> {{a.patient_name}}</td>
+              <td>{{a.doctor_name}}</td>
+              <td>{{a.phone_no}}</td>
+              <td>{{a.gender}}</td>
+              <td><a href="{% url 'admin_view_appointment' a.id  %}">More Info</a></td>
+              <td><a class="btn btn-primary btn-xs" href="{% url 'admin_update_appointment' a.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+              <td><a class="btn btn-danger btn-xs" href="{% url 'admin_delete_appointment' a.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+          </tr>
+        
+      
+      {% endfor %}
+    </table>
+  </div>
+</div>
+<!--
+
+-->
+
+{% endblock content %}

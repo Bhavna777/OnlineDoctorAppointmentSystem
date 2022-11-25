@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}Appointments{% endblock %}
+{% block body %}
+{% load static %}
+
+<div class="bg-success text-center pt-5 pb-5">
+    <h1>Hello {{request.user}}</h1>
+    <p>Your Appointment has been booked, We will contact you soon...</p>
+    <p>Patient Name :- {{request.user}}</p>
+    <p>Doctor Name :- Dr. {{doctor.user.first_name}} {{doctor.user.last_name}}</p><br>
+    <p>You can chat our doctor to know your appointment timing.</p>
+
+    <!-- <form id="post-form" method="POST" action="/checkview">
+        {% csrf_token %}
+        <label>Room Name</label>
+        <input type="text" name="room_name" id="room_name" width="100px" value={{room}} />
+        <label>Username</label>
+        <input type="text" name="username" id="username" width="100px" value={{request.user}} />
+        <label>Userid</label>
+        <input type="text" name="userid" id="userid" width="100px" value={{request.user.id}} />
+        <input type="submit" class="btn btn-primary" value="Start Chatting">
+    </form> -->
+</div>
+
+
+
+
+{% endblock %}

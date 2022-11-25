@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+{% block body %}
+{% load static %}
+<section class="products">
+    <h1 class="text-center">Products</h1><hr>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-7 text-center mt-3">
+                <p>Brand Name :- </p>
+                <p>Name :-  {{product.name}}</p>
+                <p>Rate :- {{product.rate}}</p>
+                <a href="#"><button class="btn btn-primary mt-3">Purchase Now</button></a>
+                <p class="mt-5">Description :- {{product.used_for}}</p>
+            </div>
+            <div class="col-5 text-left">
+                <img src="/static/{{product.profile_pic}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Blogs{% endblock %}
+{% block body %}
+{% load static %}
+<section class="blogs container">
+    <h1 class="text-center text-primary">{{blog.title}}</h1>
+    <p>{{blog.desc}}</p>
+    <div class="text-center mt-5 mb-5">
+        <img src="{% static blog.featured_pic.url %}"/>
+    </div>
+    <div class="container">
+        <pre><p>{{blog.content}}</p></pre>
+        <!-- <img src="/static/{{blog.author_pic}}" alt=""> -->
+        <p class="text-primary text-right mt-5">Author : {{blog.author}}</p>
+    </div>
+    
+</section>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+{% block body %}
+{% load static %}
+
+<section class="products">
+    <h1 class="text-center">Products</h1>
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-auto text-center product_row">
+                <div style="border-radius: 50%; height: 100px; width: 100px; background-color: skyblue; position: absolute; top: -40px; left: -10px;"><h5 style="margin-top: 40px;">{{product.discount}}% Off</h5></div>
+                
+                <a href="{% url 'product' product.id  %}"><img src="{% static product.profile_pic.url %}" alt="not found"/></a>
+                <div class="box-element product">
+                    <h6 class="mb-3"><strong>{{product.name}}</strong></h6><hr>
+                    <h6 style="display: inline-block;text-decoration: line-through;" class="text-center"><strong></strong>INR{{product.rate}}</strong></h6>
+                    <h5 style="display: inline-block; margin-left: 25px;" class="text-center"><strong></strong>68 INR</strong></h5><br>
+                    <hr>
+        
+                    <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    
+                    <a class="btn btn-outline-success" href="{% url 'product' product.id  %}">View</a>
+        
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- <div class="row">
+    {% for product in products %}
+    <div class="col-lg-4 products">
+        <img src="{% static product.profile_pic.url %}" alt="not found"/>
+        
+    </div>
+    {% endfor %}
+</div> -->
+
+
+{% endblock %}
+

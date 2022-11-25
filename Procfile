@@ -1,0 +1,1 @@
+web: gunicorn medolx_web_app.wsgi --log-file -

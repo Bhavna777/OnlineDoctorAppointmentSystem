@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Doctors{% endblock %}
+{% block body %}
+{% load static %}
+
+
+
+
+<section class="doctors container">
+    <h1 class="text-center">Doctors</h1>
+    
+    <div class="row">
+        {% for d in doctors %}
+        <div class="col-md-auto text-center mt-5">
+            <a href="{% url 'doctor' d.id  %}"><img src="{% static d.profile_pic.url %}" alt="not found"/></a>
+            <p class="mt-3">{{d.department}}</p>
+            <a href="{% url 'doctor' d.id  %}"><p class="mt-3">{{d.get_name}}</p></a>
+        </div>
+        {% endfor %}
+    </div>
+    
+</section>
+
+
+
+
+{% endblock %}

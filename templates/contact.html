@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+{% block body %}
+<div class="mb-5" id="wrap">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 mt-5 container">
+            <form method="post" accept-charset="utf-8" class="form" role="form">
+                {% csrf_token %}
+                <legend class="mb-3">Get in Touch</legend>
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="fname" value="" class="form-control input-lg" placeholder="First Name" /> 
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="lname" value="" class="form-control input-lg" placeholder="Last Name" />
+                    </div>
+                </div>
+                <input type="email" name="email" value="" class="form-control input-lg" placeholder="Email" />
+                <textarea name="message" id="message" class="form-control" rows="7"></textarea>
+                <br />
+                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
