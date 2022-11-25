@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ws6ijy9)lq$kyuu8210j87*x7$vdrkg*_l+rssa_u=e9j!ag%@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['192.81.214.248', 'medolx.in', 'www.medolx.in', '127.0.0.1']
 
