@@ -41,7 +41,7 @@ class Doctor(models.Model):
     department= models.CharField(max_length=50,choices=departments,default='Cardiologist')
     experience = CharField(max_length=5)
     consultation_fee = CharField(max_length=5)
-    profile_pic= models.ImageField(upload_to='profile_pic/DoctorProfilePic/',null=True,blank=True)
+    profile_pic= models.ImageField(upload_to='static/profile_pic/DoctorProfilePic/',null=True,blank=True)
     status=models.BooleanField(default=False)
     @property
     def get_name(self):
@@ -119,7 +119,7 @@ class Appointment(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=40)
-    profile_pic= models.ImageField(upload_to='profile_pic/ProductProfilePic/',null=True,blank=True)
+    profile_pic= models.ImageField(upload_to='static/profile_pic/ProductProfilePic/',null=True,blank=True)
     used_for = models.CharField(max_length=40)
     price = models.IntegerField()
     discount = models.IntegerField()
@@ -195,10 +195,10 @@ class ShippingAddress(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=200, unique=True)
     desc = models.CharField(max_length=300)
-    featured_pic= models.ImageField(upload_to='blog_pic/BlogFeaturedPic/',null=True,blank=True)
+    featured_pic= models.ImageField(upload_to='static/blog_pic/BlogFeaturedPic/',null=True,blank=True)
     content = models.TextField()
     author = models.CharField(max_length=20)
-    author_pic= models.ImageField(upload_to='blog_pic/BlogAuthorPic/',null=True,blank=True)
+    author_pic= models.ImageField(upload_to='static/blog_pic/BlogAuthorPic/',null=True,blank=True)
     
     def __str__(self):
         return self.title

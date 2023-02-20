@@ -78,7 +78,7 @@
         <div class="row">
             {% for di in doc_info %}
             <div class="col-md-auto text-center doctor">
-                <a href="{% url 'doctor' di.id  %}"><img src="{% static di.profile_pic.url %}" alt="not found"/></a>
+                <a href="{% url 'doctor' di.id  %}"><img src="{{ di.profile_pic.url }}" alt="not found"/></a>
                 <p class="mt-3">{{di.department}}</p>
             </div>
             {% endfor %}
